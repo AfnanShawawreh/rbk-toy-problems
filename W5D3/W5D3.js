@@ -36,4 +36,55 @@ Calling your function should result in:
 orderAVegetarianDish(staffA); //true
 */
 
+orderAVegetarianDish(staffA); //true
+
+
 // your answer is here 
+
+  function each(coll, f) {
+  if (Array.isArray(coll)) { 
+    for (var i = 0; i < coll.length; i++) { 
+      f(coll[i], i); 
+    } 
+  } else { 
+     for (var key in coll) { 
+       f(coll[key], key); 
+     } 
+   } 
+ } 
+function map(array, f) {
+    var acc = [] //to hold the new arr 
+    each(array, function(element, i) {
+        acc.push(f(element, i))
+    })
+    return acc
+}
+function reduce(array, f, start) {
+var acc = start;
+each(array,function(element){
+  acc=f(acc,element)
+})
+return acc;
+}
+
+function orderAVegetarianDish(array){
+       
+  return  map(array,function(obj,key){
+     
+              var rr=Object.values(obj)
+             
+            return reduse( rr,function(element)
+
+
+            )) 
+  }
+)
+
+}
+// if(obj.key === 'vegetarian'){
+//              arr.push[obj.key]
+//              }
+//              if(arr.length>=1){
+//                      return true
+//              } false
+}
